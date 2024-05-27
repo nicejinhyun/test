@@ -23,7 +23,7 @@ jobs:
             - name: Install Dependencies
               if: steps.cache.outputs.cache-hit != 'true'
               run: npm install
-              
+            - run: echo VERSION=99.99.99 >> $GITHUB_ENV
             - run: npm run lint
               if: ${{ always() }}
             - run: npm run tsc
